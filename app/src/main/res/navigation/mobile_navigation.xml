@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.recycler.recyclerviewall.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.recycler.recyclerviewall.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.recycler.recyclerviewall.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.recycler.recyclerviewall.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.recycler.recyclerviewall.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.recycler.recyclerviewall.ui.loadmore.LoadMoreFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_swip_to_delete"
+        android:name="com.recycler.recyclerviewall.ui.swipdelete.SwipToDeleteFragment"
+        android:label="@string/menu_delete"
+        tools:layout="@layout/swip_to_delete_fragment"/>
+
+    <fragment android:id="@+id/nav_diff_util"
+        android:name="com.recycler.recyclerviewall.ui.diffutil.DiffUtilFragment"
+        tools:layout="@layout/fragment_diff_util"
+        android:label="@string/menu_diffutill"/>
+
+    <fragment android:id="@+id/nav_drag_drop"
+        android:name="com.recycler.recyclerviewall.ui.draganddrop.DrageAndDropFragment"
+        android:label="@string/menu_drag_drop"
+        tools:layout="@layout/drage_and_drop_fragment"/>
+
+</navigation>
