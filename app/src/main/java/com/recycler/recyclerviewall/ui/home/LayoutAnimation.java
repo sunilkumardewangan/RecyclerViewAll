@@ -8,7 +8,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,30 +16,17 @@ import com.recycler.recyclerviewall.R;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
-    FloatingActionButton fab;
-    RecyclerView recyclerView;
-    HomeAdapter homeAdapter;
-    ArrayList<String> arrayList = new ArrayList<>();
-    private HomeViewModel homeViewModel;
-    int[] animationList = {R.anim.layout_animation_up_to_down, R.anim.layout_animation_right_to_left, R.anim.layout_animation_down_to_up, R.anim.layout_animation_left_to_right};
-
-    int i = 0;
+public class LayoutAnimation extends Fragment {
+    private RecyclerView recyclerView;
+    private LayoutAnimationAdapter homeAdapter;
+    private ArrayList<String> arrayList = new ArrayList<>();
+    private int[] animationList = {R.anim.layout_animation_up_to_down, R.anim.layout_animation_right_to_left, R.anim.layout_animation_down_to_up, R.anim.layout_animation_left_to_right};
+    private int i = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_layout_animation, container, false);
 
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-
-        fab = root.findViewById(R.id.fab);
+        FloatingActionButton fab = root.findViewById(R.id.fab);
         recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2, GridLayoutManager.VERTICAL,false));
         populateData();
@@ -49,14 +35,12 @@ public class HomeFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (i < animationList.length - 1) {
                     i++;
                 } else {
                     i = 0;
                 }
                 runAnimationAgain();
-
             }
         });
 
@@ -72,7 +56,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initAdapter() {
-        homeAdapter = new HomeAdapter(arrayList);
+        homeAdapter = new LayoutAnimationAdapter(arrayList);
         recyclerView.setAdapter(homeAdapter);
     }
 

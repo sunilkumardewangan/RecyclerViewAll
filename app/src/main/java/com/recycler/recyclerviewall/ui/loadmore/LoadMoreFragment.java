@@ -5,41 +5,23 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.recycler.recyclerviewall.R;
-
 import java.util.ArrayList;
 
 public class LoadMoreFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
-    RecyclerView recyclerView;
-    LoadMoreAdapter loadMoreAdapter;
-    ArrayList<String> rowsArrayList = new ArrayList<>();
-
-    boolean isLoading = false;
+    private RecyclerView recyclerView;
+    private LoadMoreAdapter loadMoreAdapter;
+    private ArrayList<String> rowsArrayList = new ArrayList<>();
+    private boolean isLoading = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        sendViewModel =
-//                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-//        final TextView textView = root.findViewById(R.id.text_send);
-//        sendViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
 
+        View root = inflater.inflate(R.layout.fragment_send, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
         populateData();
         initAdapter();
@@ -108,8 +90,5 @@ public class LoadMoreFragment extends Fragment {
                 isLoading = false;
             }
         }, 2000);
-
-
     }
-
 }

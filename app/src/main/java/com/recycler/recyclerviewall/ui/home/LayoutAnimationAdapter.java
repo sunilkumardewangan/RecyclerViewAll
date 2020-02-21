@@ -12,10 +12,10 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ItemViewHolder> {
+public class LayoutAnimationAdapter extends RecyclerView.Adapter<LayoutAnimationAdapter.ItemViewHolder> {
     List<String> itemList;
 
-    public HomeAdapter(List<String> itemList) {
+    public LayoutAnimationAdapter(List<String> itemList) {
         this.itemList = itemList;
     }
 

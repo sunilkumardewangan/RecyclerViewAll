@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class DrageAndDropFragment extends Fragment {
 
-    private DrageAndDropViewModel mViewModel;
     private View rootView;
     private RecyclerView recyclerView;
     private DragDropAdapter dragDropAdapter;
@@ -40,7 +39,6 @@ public class DrageAndDropFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(DrageAndDropViewModel.class);
         recyclerView = rootView.findViewById(R.id.recyclerView);
         populateList();
     }

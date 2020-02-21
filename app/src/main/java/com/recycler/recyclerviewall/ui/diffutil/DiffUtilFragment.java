@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class DiffUtilFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    FloatingActionButton fabAddList, fabChangeList;
-    DiffUtilAdapter diffUtilAdapter;
+    private RecyclerView recyclerView;
+    private FloatingActionButton fabAddList, fabChangeList;
+    private DiffUtilAdapter diffUtilAdapter;
     private ArrayList<DiffModel> modelArrayList = new ArrayList<>();
 
     public int i = 1;
